@@ -1,6 +1,8 @@
-import org.junit.Test;
+//import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+//import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ROT13Test {
 
@@ -79,6 +81,21 @@ public class ROT13Test {
         ROT13 cipher = new ROT13('a', 'n');
 
         String Q1 = "Why did the chicken cross the road?";
+        System.out.println(Q1);
+
+        // When
+        String actual = cipher.crypt(cipher.crypt(Q1));
+        System.out.println(actual);
+        // Then
+        assertTrue(actual.equals(Q1));
+    }
+
+    @Test
+    public void cryptTest3() {
+        // Given
+        ROT13 cipher = new ROT13('a', 'n');
+
+        String Q1 = "a b c d e f g h i j k l m n o p q r s t u v w x y z?";
         System.out.println(Q1);
 
         // When
